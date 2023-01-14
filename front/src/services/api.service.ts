@@ -4,6 +4,7 @@ import {Observable} from 'rxjs/internal/Observable';
 import {catchError} from 'rxjs/operators';
 import {throwError} from 'rxjs';
 import {environment} from '../../env/environment';
+import { ResponseClass } from "src/contracts/ResponseClass";
 
 @Injectable()
 export class ApiService {
@@ -11,7 +12,7 @@ export class ApiService {
   constructor(public http: HttpClient){}
 
   get(url: string): Observable<any> {
-      return this.http.get<any>(url, 
+      return this.http.get<ResponseClass[]>(url, 
               {headers: {
                   'X-Api-Key': environment.apiKey
                 }

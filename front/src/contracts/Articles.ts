@@ -1,5 +1,7 @@
+import { Source } from "./Source";
+
 export class Article {
-  source?: [];
+  source?: Source[];
   author?: string;
   title?: string;
   description?: string;

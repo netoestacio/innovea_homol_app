@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Article } from 'src/contracts/Articles';
+import { ResponseClass } from 'src/contracts/ResponseClass';
 import { ApiService } from 'src/services/api.service';
 import {environment} from '../../env/environment';
 
@@ -8,6 +10,8 @@ import {environment} from '../../env/environment';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+
+  listaArticles?: Article[] = [];
 
   constructor(public apiService: ApiService) {}
 
@@ -20,8 +24,8 @@ export class AppComponent implements OnInit{
   carregarArtigos() {
     this.apiService
     .get(`${environment.apiEndpoint}?q=bitcoin`)
-    .subscribe(resp => {
-      console.log(resp);
+    .subscribe((resp: ResponseClass) => {
+      this.listaArticles = resp.articles;
     })
   }
 
