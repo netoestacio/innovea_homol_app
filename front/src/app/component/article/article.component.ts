@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Article } from 'src/contracts/Articles';
 
 @Component({
   selector: 'app-article',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent {
+  @Input() article!: Article;
+
+  constructor(public activeModal: NgbActiveModal){}
+
+  ngOnInit(): void{
+
+  }
 
 }

@@ -6,7 +6,6 @@
       <meta name="author" content="">
     
       <title>Teste Homol Innovea</title>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </header>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -20,35 +19,14 @@
               <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(atual)</span></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Desativado</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                  <a class="dropdown-item" href="#">Item</a>
-                  <a class="dropdown-item" href="#">Outro item</a>
-                  <a class="dropdown-item" href="#">Algum outro item</a>
-                </div>
-              </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Pesquisa" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-            </form>
           </div>
         </nav>
     
         <main role="main">
           <div class="jumbotron">
             <div class="container">
-            <!--  <h1 class="display-3">Olá, mundo!</h1>
-              <p>Este é um template para um simples marketing ou website informacional. Ele inclui um callout grande (denominado jumbotron) e três conteúdos adicionais. Use-o como um ponto de partida para algo mais peculiar.</p>
-              <p><a class="btn btn-primary btn-lg" href="#" role="button">Saiba mais &raquo;</a></p>
-            -->
+           
             </div>
           </div>
     
@@ -70,10 +48,14 @@
                           <tr *ngFor="let article of listaArticles">
                             <td>{{ article.author }}</td>
                             <td>{{ article.description }}</td>
-                            <td>{{article.publishedAt }}</td>
+                            <td>{{ article.publishedAt }}</td>
                             <td>
                               <div class="btn-group">
-                                <button type="button" class="btn btn-outline-primary btn-sm">Detalhes</button>
+                                <button type="button" 
+                                        class="btn btn-outline-primary btn-sm"
+                                        (click)="abrirArtigo(article)">
+                                  Detalhes
+                                </button>
                               </div>
                             </td>
                           </tr>
@@ -93,9 +75,5 @@
           <p>&copy; Companhia 2017-2018</p>
         </footer>
         
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
       </body>
   </html>
